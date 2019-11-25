@@ -1,4 +1,6 @@
+
 require 'pry'
+
 class TicTacToe
 
   attr_accessor :input
@@ -75,7 +77,11 @@ class TicTacToe
     test_input = gets.strip
     index = input_to_index(test_input)
 
+
     if valid_move?(index)
+
+    if valid_move?(index) == true
+
       move(index, current_player)
       display_board
 
@@ -135,7 +141,11 @@ counter = 0
 
 
   def over?
+
     if draw?  || won?
+
+    if full? == true || draw? == true || won? == true
+
       return true
     else return false
     end
@@ -160,6 +170,7 @@ counter = 0
       turn
     end
 
+
     if won?
       puts "Congratulations #{winner}!"
       over = true
@@ -168,6 +179,12 @@ counter = 0
       puts "Cat's Game!"
       over = true
 
+
+
+    if won? == true
+      puts "Congradulations, #{winner}"
+    elsif draw? == true
+      puts "The game has ended in a draw."
 
     end
   end
